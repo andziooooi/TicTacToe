@@ -37,6 +37,9 @@
             btngame7 = new MyButton();
             btngame8 = new MyButton();
             btngame9 = new MyButton();
+            labelturn = new Label();
+            panelform = new Panel();
+            panelform.SuspendLayout();
             SuspendLayout();
             // 
             // btngame1
@@ -45,7 +48,7 @@
             btngame1.Cursor = Cursors.Hand;
             btngame1.FlatAppearance.BorderSize = 0;
             btngame1.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame1.Location = new Point(12, 18);
+            btngame1.Location = new Point(26, 97);
             btngame1.Margin = new Padding(0);
             btngame1.Name = "btngame1";
             btngame1.RightToLeft = RightToLeft.No;
@@ -54,7 +57,6 @@
             btngame1.TextAlign = ContentAlignment.TopCenter;
             btngame1.UseVisualStyleBackColor = false;
             btngame1.Click += btngame_Click;
-            btngame1.chosen = false;
             // 
             // btngame2
             // 
@@ -62,7 +64,7 @@
             btngame2.Cursor = Cursors.Hand;
             btngame2.FlatAppearance.BorderSize = 0;
             btngame2.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame2.Location = new Point(181, 18);
+            btngame2.Location = new Point(195, 97);
             btngame2.Margin = new Padding(0);
             btngame2.Name = "btngame2";
             btngame2.RightToLeft = RightToLeft.No;
@@ -71,7 +73,6 @@
             btngame2.TextAlign = ContentAlignment.TopCenter;
             btngame2.UseVisualStyleBackColor = false;
             btngame2.Click += btngame_Click;
-            btngame2.chosen = false;
             // 
             // btngame3
             // 
@@ -79,7 +80,7 @@
             btngame3.Cursor = Cursors.Hand;
             btngame3.FlatAppearance.BorderSize = 0;
             btngame3.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame3.Location = new Point(350, 18);
+            btngame3.Location = new Point(364, 97);
             btngame3.Margin = new Padding(0);
             btngame3.Name = "btngame3";
             btngame3.RightToLeft = RightToLeft.No;
@@ -88,7 +89,6 @@
             btngame3.TextAlign = ContentAlignment.TopCenter;
             btngame3.UseVisualStyleBackColor = false;
             btngame3.Click += btngame_Click;
-            btngame3.chosen = false;
             // 
             // btngame4
             // 
@@ -96,7 +96,7 @@
             btngame4.Cursor = Cursors.Hand;
             btngame4.FlatAppearance.BorderSize = 0;
             btngame4.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame4.Location = new Point(12, 162);
+            btngame4.Location = new Point(26, 241);
             btngame4.Margin = new Padding(0);
             btngame4.Name = "btngame4";
             btngame4.RightToLeft = RightToLeft.No;
@@ -105,7 +105,6 @@
             btngame4.TextAlign = ContentAlignment.TopCenter;
             btngame4.UseVisualStyleBackColor = false;
             btngame4.Click += btngame_Click;
-            btngame4.chosen = false;
             // 
             // btngame5
             // 
@@ -113,7 +112,7 @@
             btngame5.Cursor = Cursors.Hand;
             btngame5.FlatAppearance.BorderSize = 0;
             btngame5.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame5.Location = new Point(181, 162);
+            btngame5.Location = new Point(195, 241);
             btngame5.Margin = new Padding(0);
             btngame5.Name = "btngame5";
             btngame5.RightToLeft = RightToLeft.No;
@@ -122,7 +121,6 @@
             btngame5.TextAlign = ContentAlignment.TopCenter;
             btngame5.UseVisualStyleBackColor = false;
             btngame5.Click += btngame_Click;
-            btngame5.chosen = false;
             // 
             // btngame6
             // 
@@ -130,7 +128,7 @@
             btngame6.Cursor = Cursors.Hand;
             btngame6.FlatAppearance.BorderSize = 0;
             btngame6.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame6.Location = new Point(350, 162);
+            btngame6.Location = new Point(364, 241);
             btngame6.Margin = new Padding(0);
             btngame6.Name = "btngame6";
             btngame6.RightToLeft = RightToLeft.No;
@@ -139,7 +137,6 @@
             btngame6.TextAlign = ContentAlignment.TopCenter;
             btngame6.UseVisualStyleBackColor = false;
             btngame6.Click += btngame_Click;
-            btngame6.chosen = false;
             // 
             // btngame7
             // 
@@ -147,7 +144,7 @@
             btngame7.Cursor = Cursors.Hand;
             btngame7.FlatAppearance.BorderSize = 0;
             btngame7.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame7.Location = new Point(12, 306);
+            btngame7.Location = new Point(26, 385);
             btngame7.Margin = new Padding(0);
             btngame7.Name = "btngame7";
             btngame7.RightToLeft = RightToLeft.No;
@@ -156,7 +153,6 @@
             btngame7.TextAlign = ContentAlignment.TopCenter;
             btngame7.UseVisualStyleBackColor = false;
             btngame7.Click += btngame_Click;
-            btngame7.chosen = false;
             // 
             // btngame8
             // 
@@ -164,7 +160,7 @@
             btngame8.Cursor = Cursors.Hand;
             btngame8.FlatAppearance.BorderSize = 0;
             btngame8.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame8.Location = new Point(181, 306);
+            btngame8.Location = new Point(195, 385);
             btngame8.Margin = new Padding(0);
             btngame8.Name = "btngame8";
             btngame8.RightToLeft = RightToLeft.No;
@@ -173,7 +169,6 @@
             btngame8.TextAlign = ContentAlignment.TopCenter;
             btngame8.UseVisualStyleBackColor = false;
             btngame8.Click += btngame_Click;
-            btngame8.chosen = false;
             // 
             // btngame9
             // 
@@ -181,7 +176,7 @@
             btngame9.Cursor = Cursors.Hand;
             btngame9.FlatAppearance.BorderSize = 0;
             btngame9.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame9.Location = new Point(350, 306);
+            btngame9.Location = new Point(364, 385);
             btngame9.Margin = new Padding(0);
             btngame9.Name = "btngame9";
             btngame9.RightToLeft = RightToLeft.No;
@@ -190,24 +185,45 @@
             btngame9.TextAlign = ContentAlignment.TopCenter;
             btngame9.UseVisualStyleBackColor = false;
             btngame9.Click += btngame_Click;
-            btngame9.chosen = false;
+            // 
+            // labelturn
+            // 
+            labelturn.AutoSize = true;
+            labelturn.Font = new Font("Segoe UI", 40F);
+            labelturn.Location = new Point(121, 12);
+            labelturn.Name = "labelturn";
+            labelturn.Size = new Size(297, 72);
+            labelturn.TabIndex = 9;
+            labelturn.Text = "Player Turn";
+            labelturn.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelform
+            // 
+            panelform.Controls.Add(btngame1);
+            panelform.Controls.Add(labelturn);
+            panelform.Controls.Add(btngame4);
+            panelform.Controls.Add(btngame8);
+            panelform.Controls.Add(btngame5);
+            panelform.Controls.Add(btngame9);
+            panelform.Controls.Add(btngame7);
+            panelform.Controls.Add(btngame3);
+            panelform.Controls.Add(btngame2);
+            panelform.Controls.Add(btngame6);
+            panelform.Location = new Point(12, 12);
+            panelform.Name = "panelform";
+            panelform.Size = new Size(559, 531);
+            panelform.TabIndex = 10;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1073, 585);
-            Controls.Add(btngame9);
-            Controls.Add(btngame8);
-            Controls.Add(btngame7);
-            Controls.Add(btngame6);
-            Controls.Add(btngame5);
-            Controls.Add(btngame4);
-            Controls.Add(btngame3);
-            Controls.Add(btngame2);
-            Controls.Add(btngame1);
+            ClientSize = new Size(583, 555);
+            Controls.Add(panelform);
             Name = "Form1";
             Text = "Form1";
+            panelform.ResumeLayout(false);
+            panelform.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -222,5 +238,7 @@
         private MyButton btngame7;
         private MyButton btngame8;
         private MyButton btngame9;
+        private Label labelturn;
+        private Panel panelform;
     }
 }

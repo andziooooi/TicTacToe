@@ -72,6 +72,7 @@
             Controls.Add(labelwinner);
             Controls.Add(button2);
             Controls.Add(btnnewgame);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Form2";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Form2";

@@ -14,6 +14,9 @@ namespace tictactoe
             InitializeComponent();
             guest = startPage.guest;
             username = startPage.username;
+            panelformposition();
+            labelturnchange();
+            this.Resize += new EventHandler(Form1_resize);
         }
        
 
@@ -45,6 +48,7 @@ namespace tictactoe
                 playerturn = !playerturn;
                 rounds++;
                 check();
+                labelturnchange();
                 picked = false;
             }
             
@@ -122,10 +126,13 @@ namespace tictactoe
         }
         public void NewGame()
         {
-            foreach (MyButton b in Controls)
+            foreach (Control b in Controls)
             {
-                    b.chosen = false;
-                    b.Text = "";
+                if(b is MyButton)
+                {
+                    (b as MyButton).chosen = false;
+                    (b as MyButton).Text = "";
+                }   
             }
             rounds = 0;
             picked = false;
@@ -133,10 +140,13 @@ namespace tictactoe
         }
         public void lobby()
         {
-            foreach (MyButton b in Controls)
+            foreach (Control b in Controls)
             {
-                b.chosen = false;
-                b.Text = "";
+                if (b is MyButton)
+                {
+                    (b as MyButton).chosen = false;
+                    (b as MyButton).Text = "";
+                }
             }
             StartPage startPage = new StartPage();
             startPage.ShowDialog();
@@ -145,6 +155,29 @@ namespace tictactoe
             rounds = 0;
             picked = false;
             playerturn = true;
+        }
+        public void labelturnchange()
+        {
+            switch (playerturn)
+            {
+                case true:
+                    labelturn.Text = username + " Turn";
+                    break;
+                case false:
+                    labelturn.Text = "Guest Turn";
+                    break;
+            }
+        }
+        private void Form1_resize(object sender, EventArgs e)
+        {
+            panelformposition(); // Wywo³anie funkcji centruj¹cej przycisk podczas zmiany rozmiaru formularza
+        }
+        public void panelformposition()
+        {
+            int centerX = this.ClientSize.Width / 2;
+            int centerY = this.ClientSize.Height / 2;
+            panelform.Left = centerX - panelform.Width / 2;
+            panelform.Top = centerY - panelform.Width/2;
         }
     }
 }
