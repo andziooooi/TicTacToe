@@ -13,6 +13,7 @@ namespace tictactoe
     public partial class StartPage : Form
     {
         public bool guest = false;
+        public string username = "";
         public StartPage()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace tictactoe
         private void playwithcomputer(object sender, EventArgs e)
         {
             Close();
+            username = Username.Text;
         }
 
         private void Username_Click(object sender, EventArgs e)
@@ -31,6 +33,7 @@ namespace tictactoe
 
         private void playwithguest(object sender, EventArgs e)
         {
+            username = Username.Text;
             guest = true;
             Close();
         }

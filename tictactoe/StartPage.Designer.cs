@@ -55,7 +55,7 @@
             Username.Name = "Username";
             Username.Size = new Size(582, 100);
             Username.TabIndex = 1;
-            Username.Text = "Gracz";
+            Username.Text = "Player";
             Username.TextAlign = HorizontalAlignment.Center;
             Username.Click += Username_Click;
             // 
