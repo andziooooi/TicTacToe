@@ -126,7 +126,7 @@ namespace tictactoe
         }
         public void NewGame()
         {
-            foreach (Control b in Controls)
+            foreach (Control b in panelform.Controls)
             {
                 if(b is MyButton)
                 {
@@ -140,7 +140,7 @@ namespace tictactoe
         }
         public void lobby()
         {
-            foreach (Control b in Controls)
+            foreach (Control b in panelform.Controls)
             {
                 if (b is MyButton)
                 {
