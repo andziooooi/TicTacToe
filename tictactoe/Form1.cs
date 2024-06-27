@@ -1,3 +1,5 @@
+using System.Drawing.Drawing2D;
+
 namespace tictactoe
 {
     public partial class Form1 : Form
@@ -7,6 +9,7 @@ namespace tictactoe
         private bool picked = false;
         bool playerturn = true;
         private string username;
+        private bool play;
         public Form1()
         {
             StartPage startPage = new StartPage();
@@ -14,24 +17,33 @@ namespace tictactoe
             InitializeComponent();
             guest = startPage.guest;
             username = startPage.username;
+            play = startPage.play;
+            this.Paint += new PaintEventHandler(BackgroundGradient);
             panelformposition();
             labelturnchange();
+            this.Load += Form1Load;
             this.Resize += new EventHandler(Form1_resize);
         }
-       
 
+        private void Form1Load(object sender, EventArgs e)
+        {
+            if (!play)
+            {
+                Close();
+            }
+        }
         private void btngame_Click(object sender, EventArgs e)
         {
             MyButton btn = (MyButton)sender;
             if (playerturn)
             {
-                if(btn.chosen == false)
+                if (btn.chosen == false)
                 {
                     btn.Text = "O";
                     btn.chosen = true;
                     picked =true;
                 }
-                
+
             }
             else
             {
@@ -41,7 +53,7 @@ namespace tictactoe
                     btn.chosen = true;
                     picked =true;
                 }
-                
+
             }
             if (picked)
             {
@@ -51,7 +63,7 @@ namespace tictactoe
                 labelturnchange();
                 picked = false;
             }
-            
+
         }
         private void check()
         {
@@ -100,13 +112,13 @@ namespace tictactoe
                 End = true;
             }
 
-            if(End || tie)
+            if (End || tie)
             {
                 if (!playerturn)
                 {
                     playerwin = true;
                 }
-                Form2 EndGamePage = new Form2(End,username,playerwin);
+                Form2 EndGamePage = new Form2(End, username, playerwin);
                 EndGamePage.ShowDialog();
                 if (EndGamePage.NewGame)
                 {
@@ -122,17 +134,17 @@ namespace tictactoe
                 }
 
             }
-           
+
         }
         public void NewGame()
         {
             foreach (Control b in panelform.Controls)
             {
-                if(b is MyButton)
+                if (b is MyButton)
                 {
                     (b as MyButton).chosen = false;
                     (b as MyButton).Text = "";
-                }   
+                }
             }
             rounds = 0;
             picked = false;
@@ -179,5 +191,13 @@ namespace tictactoe
             panelform.Left = centerX - panelform.Width / 2;
             panelform.Top = centerY - panelform.Width/2;
         }
+        private void BackgroundGradient(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Rectangle rectangle = new Rectangle(0, 0, Width, Height);
+            Brush b = new LinearGradientBrush(rectangle, Color.FromArgb(173, 216, 230), Color.FromArgb(135, 206, 250), 65f);
+            graphics.FillRectangle(b, rectangle);
+        }
+
     }
 }

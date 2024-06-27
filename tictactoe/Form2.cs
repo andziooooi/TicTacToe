@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Drawing.Drawing2D;
 
 namespace tictactoe
 {
@@ -26,6 +18,7 @@ namespace tictactoe
             this.username = username;
             this.playerwin = playerwin;
             InitializeComponent();
+            this.Paint += new PaintEventHandler(BackgroundGradient);
             labelwinner_change();
         }
 
@@ -58,6 +51,18 @@ namespace tictactoe
             {
                 labelwinner.Text = "We got a tie!";
             }       
+        }
+        private void BackgroundGradient(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Rectangle rectangle = new Rectangle(0, 0, Width, Height);
+            Brush b = new LinearGradientBrush(rectangle, Color.FromArgb(150, 190, 220), Color.FromArgb(100, 170, 210), 65f);
+            graphics.FillRectangle(b, rectangle);
+        }
+        public void labelwinner_Paint(object sender, PaintEventArgs e)
+        {
+            // Rysowanie obramowania
+            ControlPaint.DrawBorder(e.Graphics, labelwinner.ClientRectangle, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid);
         }
 
     }

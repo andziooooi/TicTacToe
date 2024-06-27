@@ -35,6 +35,10 @@
             // 
             // btnnewgame
             // 
+            btnnewgame.BackColor = Color.FromArgb(200, 200, 220);
+            btnnewgame.FlatAppearance.BorderColor = Color.FromArgb(186, 85, 211);
+            btnnewgame.FlatAppearance.BorderSize = 2;
+            btnnewgame.FlatStyle = FlatStyle.Flat;
             btnnewgame.Font = new Font("Segoe UI", 30F);
             btnnewgame.Location = new Point(135, 88);
             btnnewgame.Name = "btnnewgame";
@@ -46,6 +50,10 @@
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(200, 200, 220);
+            button2.FlatAppearance.BorderColor = Color.FromArgb(186, 85, 211);
+            button2.FlatAppearance.BorderSize = 2;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Location = new Point(114, 188);
             button2.Name = "button2";
             button2.Size = new Size(282, 29);
@@ -63,12 +71,13 @@
             labelwinner.TabIndex = 3;
             labelwinner.Text = "Winner: ";
             labelwinner.TextAlign = ContentAlignment.TopCenter;
+            labelwinner.Paint += labelwinner_Paint;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(500, 229);
+            ClientSize = new Size(492, 247);
             Controls.Add(labelwinner);
             Controls.Add(button2);
             Controls.Add(btnnewgame);

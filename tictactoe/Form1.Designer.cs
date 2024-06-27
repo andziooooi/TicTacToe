@@ -44,11 +44,11 @@
             // 
             // btngame1
             // 
-            btngame1.BackColor = SystemColors.ControlDark;
+            btngame1.BackColor = Color.FromArgb(200, 200, 220);
             btngame1.Cursor = Cursors.Hand;
-            btngame1.FlatAppearance.BorderSize = 0;
+            btngame1.FlatStyle = FlatStyle.Flat;
             btngame1.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame1.Location = new Point(26, 97);
+            btngame1.Location = new Point(29, 90);
             btngame1.Margin = new Padding(0);
             btngame1.Name = "btngame1";
             btngame1.RightToLeft = RightToLeft.No;
@@ -60,11 +60,11 @@
             // 
             // btngame2
             // 
-            btngame2.BackColor = SystemColors.ControlDark;
+            btngame2.BackColor = Color.FromArgb(200, 200, 220);
             btngame2.Cursor = Cursors.Hand;
-            btngame2.FlatAppearance.BorderSize = 0;
+            btngame2.FlatStyle = FlatStyle.Flat;
             btngame2.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame2.Location = new Point(195, 97);
+            btngame2.Location = new Point(198, 90);
             btngame2.Margin = new Padding(0);
             btngame2.Name = "btngame2";
             btngame2.RightToLeft = RightToLeft.No;
@@ -76,11 +76,11 @@
             // 
             // btngame3
             // 
-            btngame3.BackColor = SystemColors.ControlDark;
+            btngame3.BackColor = Color.FromArgb(200, 200, 220);
             btngame3.Cursor = Cursors.Hand;
-            btngame3.FlatAppearance.BorderSize = 0;
+            btngame3.FlatStyle = FlatStyle.Flat;
             btngame3.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame3.Location = new Point(364, 97);
+            btngame3.Location = new Point(367, 90);
             btngame3.Margin = new Padding(0);
             btngame3.Name = "btngame3";
             btngame3.RightToLeft = RightToLeft.No;
@@ -92,11 +92,11 @@
             // 
             // btngame4
             // 
-            btngame4.BackColor = SystemColors.ControlDark;
+            btngame4.BackColor = Color.FromArgb(200, 200, 220);
             btngame4.Cursor = Cursors.Hand;
-            btngame4.FlatAppearance.BorderSize = 0;
+            btngame4.FlatStyle = FlatStyle.Flat;
             btngame4.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame4.Location = new Point(26, 241);
+            btngame4.Location = new Point(29, 234);
             btngame4.Margin = new Padding(0);
             btngame4.Name = "btngame4";
             btngame4.RightToLeft = RightToLeft.No;
@@ -108,11 +108,11 @@
             // 
             // btngame5
             // 
-            btngame5.BackColor = SystemColors.ControlDark;
+            btngame5.BackColor = Color.FromArgb(200, 200, 220);
             btngame5.Cursor = Cursors.Hand;
-            btngame5.FlatAppearance.BorderSize = 0;
+            btngame5.FlatStyle = FlatStyle.Flat;
             btngame5.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame5.Location = new Point(195, 241);
+            btngame5.Location = new Point(198, 234);
             btngame5.Margin = new Padding(0);
             btngame5.Name = "btngame5";
             btngame5.RightToLeft = RightToLeft.No;
@@ -124,11 +124,11 @@
             // 
             // btngame6
             // 
-            btngame6.BackColor = SystemColors.ControlDark;
+            btngame6.BackColor = Color.FromArgb(200, 200, 220);
             btngame6.Cursor = Cursors.Hand;
-            btngame6.FlatAppearance.BorderSize = 0;
+            btngame6.FlatStyle = FlatStyle.Flat;
             btngame6.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame6.Location = new Point(364, 241);
+            btngame6.Location = new Point(367, 234);
             btngame6.Margin = new Padding(0);
             btngame6.Name = "btngame6";
             btngame6.RightToLeft = RightToLeft.No;
@@ -140,11 +140,11 @@
             // 
             // btngame7
             // 
-            btngame7.BackColor = SystemColors.ControlDark;
+            btngame7.BackColor = Color.FromArgb(200, 200, 220);
             btngame7.Cursor = Cursors.Hand;
-            btngame7.FlatAppearance.BorderSize = 0;
+            btngame7.FlatStyle = FlatStyle.Flat;
             btngame7.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame7.Location = new Point(26, 385);
+            btngame7.Location = new Point(29, 378);
             btngame7.Margin = new Padding(0);
             btngame7.Name = "btngame7";
             btngame7.RightToLeft = RightToLeft.No;
@@ -156,11 +156,11 @@
             // 
             // btngame8
             // 
-            btngame8.BackColor = SystemColors.ControlDark;
+            btngame8.BackColor = Color.FromArgb(200, 200, 220);
             btngame8.Cursor = Cursors.Hand;
-            btngame8.FlatAppearance.BorderSize = 0;
+            btngame8.FlatStyle = FlatStyle.Flat;
             btngame8.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame8.Location = new Point(195, 385);
+            btngame8.Location = new Point(198, 378);
             btngame8.Margin = new Padding(0);
             btngame8.Name = "btngame8";
             btngame8.RightToLeft = RightToLeft.No;
@@ -172,11 +172,11 @@
             // 
             // btngame9
             // 
-            btngame9.BackColor = SystemColors.ControlDark;
+            btngame9.BackColor = Color.FromArgb(200, 200, 220);
             btngame9.Cursor = Cursors.Hand;
-            btngame9.FlatAppearance.BorderSize = 0;
+            btngame9.FlatStyle = FlatStyle.Flat;
             btngame9.Font = new Font("Segoe UI", 60F, FontStyle.Bold);
-            btngame9.Location = new Point(364, 385);
+            btngame9.Location = new Point(367, 378);
             btngame9.Margin = new Padding(0);
             btngame9.Name = "btngame9";
             btngame9.RightToLeft = RightToLeft.No;
@@ -190,7 +190,7 @@
             // 
             labelturn.AutoSize = true;
             labelturn.Font = new Font("Segoe UI", 40F);
-            labelturn.Location = new Point(121, 12);
+            labelturn.Location = new Point(29, 7);
             labelturn.Name = "labelturn";
             labelturn.Size = new Size(297, 72);
             labelturn.TabIndex = 9;
@@ -199,6 +199,7 @@
             // 
             // panelform
             // 
+            panelform.BackColor = Color.FromArgb(0, 0, 0, 100);
             panelform.Controls.Add(btngame1);
             panelform.Controls.Add(labelturn);
             panelform.Controls.Add(btngame4);
@@ -218,7 +219,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(583, 555);
+            ClientSize = new Size(1121, 664);
             Controls.Add(panelform);
             Name = "Form1";
             Text = "Form1";
