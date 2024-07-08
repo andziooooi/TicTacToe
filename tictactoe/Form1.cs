@@ -10,6 +10,8 @@ namespace tictactoe
         bool playerturn = true;
         private string username;
         private bool play;
+        private bool End = false;
+        private bool tie = false;
         public Form1()
         {
             StartPage startPage = new StartPage();
@@ -18,11 +20,11 @@ namespace tictactoe
             guest = startPage.guest;
             username = startPage.username;
             play = startPage.play;
-            this.Paint += new PaintEventHandler(BackgroundGradient);
+            Paint += new PaintEventHandler(BackgroundGradient);
             panelformposition();
             labelturnchange();
-            this.Load += Form1Load;
-            this.Resize += new EventHandler(Form1_resize);
+            Load += Form1Load;
+            Resize += new EventHandler(Form1_resize);
         }
 
         private void Form1Load(object sender, EventArgs e)
@@ -35,40 +37,42 @@ namespace tictactoe
         private void btngame_Click(object sender, EventArgs e)
         {
             MyButton btn = (MyButton)sender;
-            if (playerturn)
+            if (btn.chosen == false)
             {
-                if (btn.chosen == false)
+                if (playerturn)
                 {
                     btn.Text = "O";
                     btn.chosen = true;
                     picked =true;
                 }
-
-            }
-            else
-            {
-                if (btn.chosen == false)
+                else
                 {
                     btn.Text = "X";
                     btn.chosen = true;
                     picked =true;
                 }
-
+                if (picked)
+                {
+                    playerturn = !playerturn;
+                    rounds++;
+                    check();
+                    labelturnchange();
+                    picked = false;
+                }
+                if (!guest && !(End || tie) )
+                {
+                    labelturnchange();
+                    ComputerTurn();
+                    check();
+                    labelturnchange();
+                    picked = false;
+                }
             }
-            if (picked)
-            {
-                playerturn = !playerturn;
-                rounds++;
-                check();
-                labelturnchange();
-                picked = false;
-            }
-
         }
         private void check()
         {
-            bool End = false;
-            bool tie = false;
+            End = false;
+            tie = false;
             bool playerwin = false;
             if (rounds == 9)
             {
@@ -118,7 +122,7 @@ namespace tictactoe
                 {
                     playerwin = true;
                 }
-                Form2 EndGamePage = new Form2(End, username, playerwin);
+                Form2 EndGamePage = new Form2(End, username, playerwin, guest);
                 EndGamePage.ShowDialog();
                 if (EndGamePage.NewGame)
                 {
@@ -132,9 +136,30 @@ namespace tictactoe
                 {
                     NewGame();
                 }
-
             }
-
+        }
+        public void ComputerTurn()
+        {
+            if (rounds < 9)
+            {
+                int rnd = Random();
+                MyButton[] tab = { btngame1, btngame2, btngame3, btngame4, btngame5, btngame6, btngame7, btngame8, btngame9 };
+                while (tab[rnd].chosen)
+                {
+                    rnd = Random();
+                }
+                playerturn = !playerturn;
+                tab[rnd].Text = "X";
+                tab[rnd].chosen = true;
+                rounds++;
+                picked = true;
+            }
+        }
+        public int Random()
+        {
+            Random Rnd = new Random();
+            int result  = Rnd.Next(9);
+            return result;
         }
         public void NewGame()
         {
@@ -176,18 +201,25 @@ namespace tictactoe
                     labelturn.Text = username + " Turn";
                     break;
                 case false:
-                    labelturn.Text = "Guest Turn";
+                    if (guest)
+                    {
+                        labelturn.Text = "Guest Turn";
+                    }
+                    else
+                    {
+                        labelturn.Text = "Computer Turn";
+                    }
                     break;
             }
         }
         private void Form1_resize(object sender, EventArgs e)
         {
-            panelformposition(); // Wywo³anie funkcji centruj¹cej przycisk podczas zmiany rozmiaru formularza
+            panelformposition();
         }
         public void panelformposition()
         {
-            int centerX = this.ClientSize.Width / 2;
-            int centerY = this.ClientSize.Height / 2;
+            int centerX = ClientSize.Width / 2;
+            int centerY = ClientSize.Height / 2;
             panelform.Left = centerX - panelform.Width / 2;
             panelform.Top = centerY - panelform.Width/2;
         }
@@ -198,6 +230,5 @@ namespace tictactoe
             Brush b = new LinearGradientBrush(rectangle, Color.FromArgb(173, 216, 230), Color.FromArgb(135, 206, 250), 65f);
             graphics.FillRectangle(b, rectangle);
         }
-
     }
 }

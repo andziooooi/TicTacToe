@@ -11,8 +11,8 @@ namespace tictactoe
         public StartPage()
         {
             InitializeComponent();
-            this.Paint += new PaintEventHandler(BackgroundGradient);
-            this.Resize += new EventHandler(StartPage_resize); 
+            Paint += new PaintEventHandler(BackgroundGradient);
+            Resize += new EventHandler(StartPage_resize); 
 
             CenterControls();
         }
@@ -20,6 +20,7 @@ namespace tictactoe
         private void playwithcomputer(object sender, EventArgs e)
         {
             username = Username.Text;
+            guest = false;
             play = true;
             Close();
         }
@@ -39,14 +40,14 @@ namespace tictactoe
         }
         private void StartPage_resize(object sender, EventArgs e)
         {
-            CenterControls(); // Wywołanie funkcji centrującej przycisk podczas zmiany rozmiaru formularza
+            CenterControls(); 
         }
 
         private void CenterControls()
         {
 
-            int centerX = this.ClientSize.Width / 2;
-            int centerY = this.ClientSize.Height / 2;
+            int centerX = ClientSize.Width / 2;
+            int centerY = ClientSize.Height / 2;
 
             //label1
             //label1_Paint();
@@ -76,13 +77,11 @@ namespace tictactoe
             graphics.FillRectangle(b, rectangle);
         }
         public void label1_Paint(object sender, PaintEventArgs e)
-        {
-            // Rysowanie obramowania
+        {         
             ControlPaint.DrawBorder(e.Graphics, label1.ClientRectangle, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid);
         }
         public void panel1_Paint(object sender, PaintEventArgs e)
         {
-            // Rysowanie obramowania
             ControlPaint.DrawBorder(e.Graphics, panel1.ClientRectangle, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid);
         }
 

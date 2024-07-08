@@ -9,16 +9,18 @@ namespace tictactoe
         public bool NewGame;
         public bool lobby;
         private bool playerwin;
+        private bool guest;
 
-        public Form2(bool winner, string username,bool playerwin)
+        public Form2(bool winner, string username,bool playerwin,bool guest)
         {
             lobby = false;
             NewGame = false;
+            this.guest = guest;
             this.winner = winner;
             this.username = username;
             this.playerwin = playerwin;
             InitializeComponent();
-            this.Paint += new PaintEventHandler(BackgroundGradient);
+            Paint += new PaintEventHandler(BackgroundGradient);
             labelwinner_change();
         }
 
@@ -41,9 +43,13 @@ namespace tictactoe
                 {
                     labelwinner.Text = "Winner:\n" + username;
                 }
-                else
+                else if (guest)
                 {
                     labelwinner.Text = "Winner:\n Guest!";
+                }
+                else if (!guest)
+                {
+                    labelwinner.Text = "Winner:\n Computer!";
                 }
                 
             }
@@ -61,7 +67,6 @@ namespace tictactoe
         }
         public void labelwinner_Paint(object sender, PaintEventArgs e)
         {
-            // Rysowanie obramowania
             ControlPaint.DrawBorder(e.Graphics, labelwinner.ClientRectangle, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid, Color.FromArgb(186, 85, 211), 2, ButtonBorderStyle.Solid);
         }
 
